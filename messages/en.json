@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "title": "Kosly — Manage Your Kos, Minus the Chaos",
+    "description": "Kosly keeps kos owners, caretakers, and residents on the same page — payments, receipts, and room status, all in one friendly app.",
+    "tagline": "Manage Your Kos, Minus the Chaos",
+    "keywords": "kos management app, boarding house management, rent payment tracking, kos payment receipts, kos owner app, room status tracking, Kosly, Movira"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "How It Works",
+      "forOwners": "For Owners",
+      "forResidents": "For Residents",
+      "forCaretakers": "For Caretakers",
+      "login": "Log In",
+      "register": "Get Started Free",
+      "openMenu": "Open menu"
+    },
+    "hero": {
+      "headline": "The kos life, made simple — for everyone who lives it.",
+      "subheadline": "Kosly keeps owners, caretakers, and residents on the same page — payments, receipts, and room status, all in one friendly app.",
+      "ctaPrimary": "Get Started Free",
+      "ctaSecondary": "See How It Works",
+      "sampleAmountLabel": "Payment confirmed instantly",
+      "sampleBadge": "Paid",
+      "sampleName": "Ditta",
+      "sampleRoom": "Room 4B",
+      "sampleTime": "Today, 2:02 PM"
+    },
+    "howItWorks": {
+      "eyebrow": "One App, Three Happy Sides",
+      "owner": {
+        "eyebrow": "For Owners",
+        "tabLabel": "Owner",
+        "headline": "You don't have to be there to know what's happening there.",
+        "step1": "See every room and every payment from your phone — anytime, from anywhere.",
+        "step2": "Every transaction is logged automatically and can't be quietly edited or deleted — not even by your caretaker.",
+        "step3": "If something doesn't add up between what's recorded and what's actually paid, you'll know right away.",
+        "cta": "Try as an Owner"
+      },
+      "resident": {
+        "eyebrow": "For Residents",
+        "tabLabel": "Resident",
+        "headline": "Pay your kos, get proof instantly. No waiting for someone to write it down.",
+        "step1": "Pay your rent and get a digital receipt instantly — no more photographing paper slips.",
+        "step2": "Your full payment history is right there — no more \"wait, I thought I already paid\" back-and-forth.",
+        "step3": "Something wrong with your room? Report it right from the app — no more chasing people down.",
+        "cta": "Try as a Resident"
+      },
+      "caretaker": {
+        "eyebrow": "For Caretakers",
+        "tabLabel": "Caretaker",
+        "headline": "Less paperwork, less hassle, more time for what matters.",
+        "step1": "Log a payment in seconds — no more handwritten notebooks that go missing.",
+        "step2": "See every room's status at a glance — occupied, vacant, or under repair.",
+        "step3": "Get a clear list of what needs attention today, instead of guessing.",
+        "cta": "Try as a Caretaker"
+      }
+    },
+    "trust": {
+      "eyebrow": "Why People Actually Trust Kosly",
+      "body": "No more \"wait, I thought I already paid.\" Every payment is logged the moment it happens, and nobody can quietly edit it later — not the caretaker, not even us.",
+      "tagline": "Logged automatically. Never rewritten.",
+      "feature1Title": "Logged automatically",
+      "feature1Body": "Every payment is recorded the second it comes in — no notebooks, no forgetting.",
+      "feature2Title": "Can't be quietly edited",
+      "feature2Body": "Once it's in, it's in. Records can't disappear or get rewritten without a trace.",
+      "feature3Title": "Visible to everyone involved",
+      "feature3Body": "Owners, caretakers, and residents all see the same numbers — no surprises."
+    },
+    "socialProof": {
+      "eyebrow": "Kosly in Numbers",
+      "verifiedTransactionsLabel": "Payments logged",
+      "propertiesLabel": "Kos properties",
+      "citiesLabel": "Cities",
+      "earlyAccessHeadline": "Kosly just launched — be one of the first kos to join."
+    },
+    "marketing": {
+      "eyebrow": "Bonus",
+      "badge": "Coming Soon",
+      "headline": "Got an empty room? Let's get it filled.",
+      "body": "Kosly can help your empty rooms get discovered by people actually looking for a kos — no need to post listings elsewhere."
+    },
+    "faq": {
+      "eyebrow": "Frequently Asked Questions",
+      "ownerCaretaker": {
+        "question": "What if my caretaker doesn't want to use this app?",
+        "answer": "Kosly is built to be simple enough for daily use — just enough to log incoming payments. We know habits don't change overnight, so we help with onboarding too."
+      },
+      "caretakerWorkload": {
+        "question": "Does this add more work for the caretaker?",
+        "answer": "Nope — logging a payment takes seconds, way less than writing it in a notebook. Most caretakers get comfortable with it within a day."
+      },
+      "dataSafety": {
+        "question": "Is my financial data safe?",
+        "answer": "Yes. Every transaction is encrypted and permanently recorded — it can't be deleted, not even by us."
+      },
+      "residentCash": {
+        "question": "Do I still have to pay cash to the caretaker?",
+        "answer": "Not anymore. You can pay directly through Kosly and your proof of payment is saved automatically."
+      },
+      "residentDeposit": {
+        "question": "Is my deposit tracked here too?",
+        "answer": "Yes. Your deposit status — held, confirmed, or refunded — is always visible in your account."
+      }
+    },
+    "finalCta": {
+      "headline": "Start free. No credit card needed.",
+      "ownerButton": "I'm an Owner",
+      "residentButton": "I'm a Resident",
+      "caretakerButton": "I'm a Caretaker"
+    },
+    "footer": {
+      "tagline": "Made for everyone who lives the kos life.",
+      "productHeading": "Product",
+      "companyHeading": "Company",
+      "legalHeading": "Legal",
+      "home": "Home",
+      "privacyPolicy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "copyright": "© {year} Kosly. Made in Indonesia."
+    }
+  },
+  "notFound": {
+    "headline": "The room you're looking for isn't here.",
+    "body": "Looks like this page moved, got removed, or never existed in the first place. Let's get you back.",
+    "homeButton": "Back to Home",
+    "dashboardButton": "Go to Dashboard"
+  },
+  "register": {
+    "metadata": {
+      "title": "Create your Kosly account",
+      "description": "Sign up for Kosly — for owners, residents, and caretakers."
+    },
+    "eyebrow": "Join Kosly",
+    "headline": "Create your free account",
+    "subheadline": "Pick who you are, fill in a few details, and you're in.",
+    "roleLabel": "I am a...",
+    "role": {
+      "owner": {
+        "label": "Owner",
+        "description": "Manage your kos from anywhere"
+      },
+      "tenant": {
+        "label": "Resident",
+        "description": "Pay rent, get instant receipts"
+      },
+      "caretaker": {
+        "label": "Caretaker",
+        "description": "Log payments in seconds"
+      }
+    },
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "e.g. Ditta Amelia",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "08xxxxxxxxxx",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "At least 8 characters",
+    "passwordHelper": "Use at least 8 characters.",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "termsPrefix": "I agree to Kosly's",
+    "termsLink": "Terms & Conditions",
+    "andLabel": "and",
+    "privacyLink": "Privacy Policy",
+    "submitButton": "Create account",
+    "submitButtonLoading": "Creating your account...",
+    "loginPrompt": "Already have an account?",
+    "loginLink": "Log in",
+    "errors": {
+      "fullNameRequired": "Please enter your full name.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "That doesn't look like a valid email.",
+      "phoneInvalid": "That doesn't look like a valid phone number.",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "passwordMismatch": "Passwords don't match.",
+      "termsRequired": "You need to agree to continue.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "successHeadline": "You're in!",
+    "successBody": "Your account has been created. Log in to get started."
+  },
+  "login": {
+    "metadata": {
+      "title": "Log in to Kosly",
+      "description": "Log in to your Kosly account to manage your kos, pay rent, or log payments."
+    },
+    "eyebrow": "Welcome Back",
+    "headline": "Log in to Kosly",
+    "subheadline": "Pick up right where you left off.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Remember me",
+    "submitButton": "Log In",
+    "submitButtonLoading": "Logging in...",
+    "successMessage": "You're in! Taking you home...",
+    "registerPrompt": "Don't have an account?",
+    "errors": {
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "That doesn't look like a valid email.",
+      "passwordRequired": "Please enter your password.",
+      "generic": "We couldn't log you in. Check your email and password and try again."
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms & Conditions",
+      "updatedLabel": "Last updated: September 23, 2026",
+      "intro": "These Terms & Conditions (\"Terms\") govern your access to and use of Kosly, a platform that helps kos owners, caretakers, and residents manage payments, receipts, and room records. By creating an account or using Kosly, you agree to these Terms.",
+      "sections": {
+        "acceptance": {
+          "heading": "Acceptance of Terms",
+          "body": "By registering for or using Kosly, you confirm that you're at least 18 years old (or have the consent of a parent or legal guardian) and that you have the authority to agree to these Terms on your own behalf or on behalf of the kos property you represent. If you don't agree with any part of these Terms, please don't use Kosly."
+        },
+        "service": {
+          "heading": "What Kosly Does",
+          "body": "Kosly is a record-keeping and communication tool for kos (boarding house) properties. It lets owners track rooms and payments remotely, lets caretakers log payments as they're received, and lets residents view their payment history and receive digital receipts. Kosly is not a bank, payment processor, or party to any rental agreement between owners and residents — we simply help everyone keep the same accurate record."
+        },
+        "accounts": {
+          "heading": "Your Account",
+          "body": "You may register as an Owner, Caretaker, or Resident. You're responsible for keeping your login credentials confidential and for all activity that happens under your account. Tell us right away if you suspect unauthorized access. Owners are responsible for verifying that the caretakers and residents they invite or approve are who they claim to be."
+        },
+        "responsibilities": {
+          "heading": "Your Responsibilities",
+          "body": "You agree to provide accurate information when creating your account and logging payments, to use Kosly only for lawful purposes related to managing or residing in a kos property, and not to attempt to alter, delete, or falsify any transaction record. Caretakers agree to log payments promptly and accurately as they're received."
+        },
+        "payments": {
+          "heading": "Payments & Fees",
+          "body": "Kosly may offer free and paid plans. Where fees apply, they'll be clearly shown before you're charged. Rent and deposit payments between owners and residents are agreements between those parties — Kosly records them but is not responsible for enforcing payment or resolving rental disputes."
+        },
+        "recordIntegrity": {
+          "heading": "Record Integrity",
+          "body": "Once a payment is logged, it becomes part of a permanent, append-only record and cannot be silently edited or deleted — not by caretakers, not by owners, and not by Kosly staff outside of a documented correction process. This is core to how Kosly builds trust between owners, caretakers, and residents."
+        },
+        "prohibited": {
+          "heading": "Prohibited Conduct",
+          "body": "You may not use Kosly to log false or fraudulent transactions, harass or discriminate against other users, attempt to gain unauthorized access to accounts or data that aren't yours, or interfere with the normal operation of the service."
+        },
+        "termination": {
+          "heading": "Suspension & Termination",
+          "body": "You may stop using Kosly at any time. We may suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or pose a risk to other users. Where possible, we'll notify you before taking action and explain why."
+        },
+        "liability": {
+          "heading": "Limitation of Liability",
+          "body": "Kosly is provided \"as is.\" We work hard to keep records accurate and the service available, but we can't guarantee it will be error-free or uninterrupted at all times. To the extent permitted by law, Kosly isn't liable for indirect or consequential damages arising from your use of the service, including disputes between owners, caretakers, and residents."
+        },
+        "changes": {
+          "heading": "Changes to These Terms",
+          "body": "We may update these Terms as Kosly evolves. If we make material changes, we'll let you know through the app or by email before they take effect. Continuing to use Kosly after changes take effect means you accept the updated Terms."
+        },
+        "contact": {
+          "heading": "Contact Us",
+          "body": "Questions about these Terms? Reach us at support@kosly.app."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updatedLabel": "Last updated: September 23, 2026",
+      "intro": "This Privacy Policy explains what information Kosly collects, how we use it, and the choices you have. It applies to owners, caretakers, and residents using Kosly.",
+      "sections": {
+        "overview": {
+          "heading": "Overview",
+          "body": "Kosly was built to make kos management transparent and trustworthy. That same principle applies to how we handle your data — we collect only what's needed to run the service, and we're upfront about it here."
+        },
+        "collection": {
+          "heading": "Information We Collect",
+          "body": "We collect the information you give us directly, such as your name, email address, phone number, and password when you register. We also collect information generated through your use of Kosly, such as room assignments, payment records, and receipts, and basic technical data like device and browser type for security and troubleshooting."
+        },
+        "use": {
+          "heading": "How We Use Your Information",
+          "body": "We use your information to operate your account, record and display payment history, send receipts and notifications, respond to support requests, and improve Kosly's features. We don't sell your personal information to third parties."
+        },
+        "sharing": {
+          "heading": "Sharing Within Your Kos",
+          "body": "Because Kosly's whole point is a shared, trustworthy record, some information is visible to other people connected to your kos property. Owners and caretakers can see payment records for residents in their property, and residents can see their own payment history. We don't share your information with people outside your kos property without your consent, except as described in this policy or required by law."
+        },
+        "security": {
+          "heading": "Data Security",
+          "body": "Payment records are encrypted and stored in a way that prevents silent edits or deletion — once logged, a transaction stays part of the permanent record. We use industry-standard safeguards to protect your account and data, but no system is completely immune to risk, so please also use a strong, unique password."
+        },
+        "retention": {
+          "heading": "Data Retention",
+          "body": "We keep your account and transaction data for as long as your account is active, and for a reasonable period afterward to meet legal, accounting, and dispute-resolution needs. Payment records in particular are retained permanently as part of Kosly's immutable ledger, even if an account is later closed."
+        },
+        "rights": {
+          "heading": "Your Rights",
+          "body": "You can access and update most of your account information directly in the app. You can request a copy of your data or ask us to delete personal information that isn't part of a permanent transaction record by contacting us — we'll respond within a reasonable time and explain if any information (like historical payment records) needs to be retained for legal reasons."
+        },
+        "cookies": {
+          "heading": "Cookies & Similar Technologies",
+          "body": "Kosly uses essential cookies to keep you logged in and to remember your language preference. We don't use third-party advertising trackers."
+        },
+        "children": {
+          "heading": "Children's Privacy",
+          "body": "Kosly is intended for adults managing or residing in kos properties and isn't directed at children. We don't knowingly collect personal information from anyone under 18."
+        },
+        "changes": {
+          "heading": "Changes to This Policy",
+          "body": "If we make material changes to how we handle your information, we'll notify you through the app or by email before the changes take effect."
+        },
+        "contact": {
+          "heading": "Contact Us",
+          "body": "Questions about your privacy? Reach us at privacy@kosly.app."
+        }
+      }
+    }
+  }
+}

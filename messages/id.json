@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "title": "Kosly — Urus Kos Tanpa Ribet",
+    "description": "Kosly bikin pemilik, penjaga, dan penghuni kos selalu satu suara — pembayaran, bukti transaksi, dan status kamar, semua di satu aplikasi yang ramah.",
+    "tagline": "Urus Kos Tanpa Ribet",
+    "keywords": "aplikasi manajemen kos, aplikasi pengelolaan kos, pembayaran sewa kos, bukti pembayaran kos, aplikasi pemilik kos, status kamar kos, Kosly, Movira"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Cara Kerja",
+      "forOwners": "Untuk Pemilik Kos",
+      "forResidents": "Untuk Penghuni",
+      "forCaretakers": "Untuk Penjaga Kos",
+      "login": "Masuk",
+      "register": "Mulai Gratis",
+      "openMenu": "Buka menu"
+    },
+    "hero": {
+      "headline": "Hidup kos, jadi lebih gampang — buat semua orang yang ngejalanin.",
+      "subheadline": "Kosly bikin pemilik, penjaga, dan penghuni kos selalu satu suara — pembayaran, bukti transaksi, dan status kamar, semua di satu aplikasi yang ramah.",
+      "ctaPrimary": "Mulai Gratis",
+      "ctaSecondary": "Lihat Cara Kerja",
+      "sampleAmountLabel": "Pembayaran langsung terkonfirmasi",
+      "sampleBadge": "Lunas",
+      "sampleName": "Ditta",
+      "sampleRoom": "Kamar 4B",
+      "sampleTime": "Hari ini, 14.02"
+    },
+    "howItWorks": {
+      "eyebrow": "Satu Aplikasi, Tiga Pihak Senang",
+      "owner": {
+        "eyebrow": "Untuk Pemilik Kos",
+        "tabLabel": "Pemilik",
+        "headline": "Anda tidak harus selalu berada di sana untuk tahu apa yang terjadi di sana.",
+        "step1": "Pantau semua kamar dan pemasukan langsung dari ponsel Anda — kapan saja, di mana saja.",
+        "step2": "Setiap transaksi tercatat otomatis dan tidak bisa dihapus atau diubah diam-diam, termasuk oleh penjaga kos.",
+        "step3": "Jika ada yang tidak sesuai antara catatan dan pembayaran, Anda akan langsung diberi tahu.",
+        "cta": "Coba Sebagai Pemilik Kos"
+      },
+      "resident": {
+        "eyebrow": "Untuk Penghuni Kos",
+        "tabLabel": "Penghuni",
+        "headline": "Bayar kos, langsung ada buktinya. Nggak pake nunggu dicatet manual.",
+        "step1": "Bayar sewa dan langsung dapet bukti pembayaran digital — nggak perlu foto kuitansi kertas lagi.",
+        "step2": "Semua histori pembayaran kamu kelihatan jelas, jadi nggak ada drama \"lho katanya udah dibayar.\"",
+        "step3": "Ada masalah di kamar? Laporin langsung dari aplikasi, nggak perlu chat sana-sini.",
+        "cta": "Coba Sebagai Penghuni"
+      },
+      "caretaker": {
+        "eyebrow": "Untuk Penjaga Kos",
+        "tabLabel": "Penjaga",
+        "headline": "Kerja jadi lebih ringan, waktu jadi lebih banyak.",
+        "step1": "Catat pembayaran cuma dalam hitungan detik — nggak perlu buku catatan yang gampang ilang.",
+        "step2": "Pantau status semua kamar sekali lihat — terisi, kosong, atau lagi diperbaiki.",
+        "step3": "Dapat daftar jelas soal apa yang perlu dikerjain hari ini, nggak perlu nebak-nebak.",
+        "cta": "Coba Sebagai Penjaga Kos"
+      }
+    },
+    "trust": {
+      "eyebrow": "Kenapa Orang Beneran Percaya Kosly",
+      "body": "Nggak ada lagi drama \"katanya udah bayar.\" Setiap pembayaran tercatat begitu masuk, dan nggak bisa diotak-atik diam-diam — bukan sama penjaga kos, apalagi sama kami.",
+      "tagline": "Tercatat otomatis. Nggak pernah diubah diam-diam.",
+      "feature1Title": "Tercatat otomatis",
+      "feature1Body": "Setiap pembayaran langsung tercatat saat masuk — nggak perlu buku catatan, nggak perlu lupa.",
+      "feature2Title": "Nggak bisa diotak-atik diam-diam",
+      "feature2Body": "Sekali tercatat, ya tercatat. Datanya nggak bisa hilang atau diubah tanpa jejak.",
+      "feature3Title": "Kelihatan buat semua pihak",
+      "feature3Body": "Pemilik, penjaga, dan penghuni kos semuanya lihat angka yang sama — nggak ada kejutan."
+    },
+    "socialProof": {
+      "eyebrow": "Kosly Dalam Angka",
+      "verifiedTransactionsLabel": "Pembayaran tercatat",
+      "propertiesLabel": "Kos terdaftar",
+      "citiesLabel": "Kota",
+      "earlyAccessHeadline": "Kosly baru aja diluncurkan — jadilah salah satu kos pertama yang gabung."
+    },
+    "marketing": {
+      "eyebrow": "Bonus",
+      "badge": "Segera Hadir",
+      "headline": "Kamar kosong? Yuk, kita isi lagi.",
+      "body": "Kosly bisa bantu kamar kosong kamu dilihat sama orang yang lagi cari kos — nggak perlu pasang iklan di tempat lain."
+    },
+    "faq": {
+      "eyebrow": "Pertanyaan yang Sering Diajukan",
+      "ownerCaretaker": {
+        "question": "Gimana kalau penjaga kos saya nggak mau pakai aplikasi ini?",
+        "answer": "Kosly dirancang sesimpel mungkin untuk dipakai sehari-hari — cukup untuk mencatat pembayaran masuk. Kami memahami perubahan kebiasaan tidak instan, karena itu kami bantu proses pengenalannya."
+      },
+      "caretakerWorkload": {
+        "question": "Apakah ini nambah kerjaan buat penjaga kos?",
+        "answer": "Nggak kok — nyatet pembayaran cuma butuh beberapa detik, jauh lebih cepat dari nulis di buku. Kebanyakan penjaga kos udah lancar dalam sehari."
+      },
+      "dataSafety": {
+        "question": "Data keuangan saya aman, nggak?",
+        "answer": "Aman. Setiap transaksi terenkripsi dan tercatat permanen — tidak bisa dihapus, bahkan oleh kami sekalipun."
+      },
+      "residentCash": {
+        "question": "Bayar kos masih harus cash ke penjaga kos?",
+        "answer": "Nggak harus lagi. Kamu bisa bayar langsung lewat Kosly dan buktinya otomatis tersimpan."
+      },
+      "residentDeposit": {
+        "question": "Deposit saya kepantau juga nggak di sini?",
+        "answer": "Kepantau. Status deposit kamu — ditahan, dikonfirmasi, atau dikembalikan — selalu kelihatan di akun kamu."
+      }
+    },
+    "finalCta": {
+      "headline": "Mulai dari yang gratis. Tidak perlu kartu kredit.",
+      "ownerButton": "Saya Pemilik Kos",
+      "residentButton": "Saya Penghuni Kos",
+      "caretakerButton": "Saya Penjaga Kos"
+    },
+    "footer": {
+      "tagline": "Dibuat buat semua orang yang ngejalanin hidup kos.",
+      "productHeading": "Produk",
+      "companyHeading": "Perusahaan",
+      "legalHeading": "Legal",
+      "home": "Beranda",
+      "privacyPolicy": "Kebijakan Privasi",
+      "terms": "Syarat & Ketentuan",
+      "copyright": "© {year} Kosly. Dibuat di Indonesia."
+    }
+  },
+  "notFound": {
+    "headline": "Kamar yang kamu cari nggak ketemu.",
+    "body": "Sepertinya halaman ini pindah, dihapus, atau memang belum pernah ada. Yuk balik lagi.",
+    "homeButton": "Kembali ke Beranda",
+    "dashboardButton": "Ke Dashboard"
+  },
+  "register": {
+    "metadata": {
+      "title": "Buat Akun Kosly Kamu",
+      "description": "Daftar di Kosly — buat pemilik, penghuni, dan penjaga kos."
+    },
+    "eyebrow": "Gabung Kosly",
+    "headline": "Buat akun gratis kamu",
+    "subheadline": "Pilih kamu siapa, isi beberapa data, langsung bisa dipakai.",
+    "roleLabel": "Saya seorang...",
+    "role": {
+      "owner": {
+        "label": "Pemilik Kos",
+        "description": "Pantau kos kamu dari mana saja"
+      },
+      "tenant": {
+        "label": "Penghuni",
+        "description": "Bayar sewa, langsung dapet bukti"
+      },
+      "caretaker": {
+        "label": "Penjaga Kos",
+        "description": "Catat pembayaran cuma hitungan detik"
+      }
+    },
+    "fullNameLabel": "Nama lengkap",
+    "fullNamePlaceholder": "cth. Ditta Amelia",
+    "emailLabel": "Alamat email",
+    "emailPlaceholder": "kamu@contoh.com",
+    "phoneLabel": "Nomor HP",
+    "phonePlaceholder": "08xxxxxxxxxx",
+    "passwordLabel": "Kata sandi",
+    "passwordPlaceholder": "Minimal 8 karakter",
+    "passwordHelper": "Gunakan minimal 8 karakter.",
+    "confirmPasswordLabel": "Konfirmasi kata sandi",
+    "confirmPasswordPlaceholder": "Ketik ulang kata sandi kamu",
+    "showPassword": "Tampilkan kata sandi",
+    "hidePassword": "Sembunyikan kata sandi",
+    "termsPrefix": "Saya setuju dengan",
+    "termsLink": "Syarat & Ketentuan",
+    "andLabel": "dan",
+    "privacyLink": "Kebijakan Privasi",
+    "submitButton": "Buat akun",
+    "submitButtonLoading": "Lagi bikin akun kamu...",
+    "loginPrompt": "Udah punya akun?",
+    "loginLink": "Masuk",
+    "errors": {
+      "fullNameRequired": "Isi dulu nama lengkap kamu.",
+      "emailRequired": "Isi dulu alamat email kamu.",
+      "emailInvalid": "Formatnya kayaknya belum bener nih.",
+      "phoneInvalid": "Nomor HP-nya kayaknya belum bener nih.",
+      "passwordTooShort": "Kata sandi minimal 8 karakter.",
+      "passwordMismatch": "Kata sandinya nggak sama.",
+      "termsRequired": "Kamu perlu setuju dulu buat lanjut.",
+      "generic": "Ada yang salah nih. Coba lagi ya."
+    },
+    "successHeadline": "Berhasil!",
+    "successBody": "Akun kamu udah dibuat. Masuk buat mulai pakai Kosly."
+  },
+  "login": {
+    "metadata": {
+      "title": "Masuk ke Kosly",
+      "description": "Masuk ke akun Kosly kamu untuk lanjut kelola kos, bayar sewa, atau catat pembayaran."
+    },
+    "eyebrow": "Selamat Datang Kembali",
+    "headline": "Masuk ke Kosly",
+    "subheadline": "Lanjutin dari terakhir kamu berhenti.",
+    "emailLabel": "Alamat email",
+    "emailPlaceholder": "kamu@contoh.com",
+    "passwordLabel": "Kata sandi",
+    "passwordPlaceholder": "Masukkan kata sandi kamu",
+    "showPassword": "Tampilkan kata sandi",
+    "hidePassword": "Sembunyikan kata sandi",
+    "rememberMe": "Ingat saya",
+    "submitButton": "Masuk",
+    "submitButtonLoading": "Lagi masuk...",
+    "successMessage": "Berhasil masuk! Ngarahin kamu ke beranda...",
+    "registerPrompt": "Belum punya akun?",
+    "errors": {
+      "emailRequired": "Isi dulu alamat email kamu.",
+      "emailInvalid": "Formatnya kayaknya belum bener nih.",
+      "passwordRequired": "Isi dulu kata sandi kamu.",
+      "generic": "Kami nggak bisa masukin kamu. Coba cek lagi email dan kata sandinya ya."
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "Syarat & Ketentuan",
+      "updatedLabel": "Terakhir diperbarui: 23 September 2026",
+      "intro": "Syarat & Ketentuan (\"Ketentuan\") ini mengatur akses dan penggunaan Anda atas Kosly, platform yang membantu pemilik kos, penjaga kos, dan penghuni mengelola pembayaran, bukti transaksi, dan data kamar. Dengan membuat akun atau menggunakan Kosly, Anda menyetujui Ketentuan ini.",
+      "sections": {
+        "acceptance": {
+          "heading": "Persetujuan atas Ketentuan",
+          "body": "Dengan mendaftar atau menggunakan Kosly, Anda menyatakan bahwa Anda berusia minimal 18 tahun (atau telah mendapat izin dari orang tua/wali) dan memiliki wewenang untuk menyetujui Ketentuan ini, baik untuk diri Anda sendiri maupun atas nama properti kos yang Anda wakili. Jika Anda tidak menyetujui bagian mana pun dari Ketentuan ini, mohon untuk tidak menggunakan Kosly."
+        },
+        "service": {
+          "heading": "Tentang Layanan Kosly",
+          "body": "Kosly adalah alat pencatatan dan komunikasi untuk properti kos. Kosly memungkinkan pemilik kos memantau kamar dan pembayaran dari jarak jauh, penjaga kos mencatat pembayaran saat diterima, dan penghuni melihat riwayat pembayaran serta menerima bukti transaksi digital. Kosly bukan bank, penyedia layanan pembayaran, maupun pihak dalam perjanjian sewa antara pemilik dan penghuni — kami hanya membantu semua pihak memiliki catatan yang sama dan akurat."
+        },
+        "accounts": {
+          "heading": "Akun Anda",
+          "body": "Anda dapat mendaftar sebagai Pemilik Kos, Penjaga Kos, atau Penghuni. Anda bertanggung jawab menjaga kerahasiaan kredensial masuk Anda serta seluruh aktivitas yang terjadi melalui akun Anda. Segera hubungi kami jika Anda menduga ada akses yang tidak sah. Pemilik kos bertanggung jawab memverifikasi identitas penjaga kos dan penghuni yang diundang atau disetujui untuk bergabung."
+        },
+        "responsibilities": {
+          "heading": "Tanggung Jawab Anda",
+          "body": "Anda setuju untuk memberikan informasi yang akurat saat membuat akun dan mencatat pembayaran, menggunakan Kosly hanya untuk tujuan sah yang berkaitan dengan pengelolaan atau tempat tinggal di properti kos, serta tidak mencoba mengubah, menghapus, atau memalsukan catatan transaksi apa pun. Penjaga kos setuju untuk mencatat pembayaran secara tepat waktu dan akurat saat diterima."
+        },
+        "payments": {
+          "heading": "Pembayaran & Biaya",
+          "body": "Kosly dapat menawarkan paket gratis maupun berbayar. Jika ada biaya yang berlaku, biaya tersebut akan ditampilkan dengan jelas sebelum Anda dikenakan tagihan. Pembayaran sewa dan deposit antara pemilik dan penghuni merupakan kesepakatan antara kedua belah pihak tersebut — Kosly mencatat transaksi ini namun tidak bertanggung jawab untuk menegakkan pembayaran atau menyelesaikan sengketa sewa."
+        },
+        "recordIntegrity": {
+          "heading": "Integritas Catatan",
+          "body": "Setelah sebuah pembayaran tercatat, catatan tersebut menjadi bagian dari catatan permanen yang hanya bisa ditambah, dan tidak dapat diubah atau dihapus secara diam-diam — baik oleh penjaga kos, pemilik kos, maupun tim Kosly, kecuali melalui proses koreksi resmi yang terdokumentasi. Hal ini adalah prinsip utama yang membangun kepercayaan antara pemilik, penjaga, dan penghuni kos."
+        },
+        "prohibited": {
+          "heading": "Larangan Penggunaan",
+          "body": "Anda dilarang menggunakan Kosly untuk mencatat transaksi palsu atau curang, melecehkan atau mendiskriminasi pengguna lain, mencoba mengakses akun atau data yang bukan milik Anda tanpa izin, atau mengganggu jalannya operasional layanan secara normal."
+        },
+        "termination": {
+          "heading": "Penangguhan & Penghentian Akun",
+          "body": "Anda dapat berhenti menggunakan Kosly kapan saja. Kami dapat menangguhkan atau menghentikan akun yang melanggar Ketentuan ini, terlibat aktivitas curang, atau membahayakan pengguna lain. Sedapat mungkin, kami akan memberi tahu Anda sebelum mengambil tindakan beserta alasannya."
+        },
+        "liability": {
+          "heading": "Batasan Tanggung Jawab",
+          "body": "Kosly disediakan \"apa adanya\" (as is). Kami berupaya menjaga akurasi catatan dan ketersediaan layanan, namun tidak dapat menjamin layanan bebas dari kesalahan atau gangguan sepanjang waktu. Sepanjang diizinkan oleh hukum, Kosly tidak bertanggung jawab atas kerugian tidak langsung yang timbul dari penggunaan layanan, termasuk sengketa antara pemilik, penjaga, dan penghuni kos."
+        },
+        "changes": {
+          "heading": "Perubahan Ketentuan",
+          "body": "Kami dapat memperbarui Ketentuan ini seiring berkembangnya Kosly. Jika ada perubahan signifikan, kami akan memberi tahu Anda melalui aplikasi atau email sebelum perubahan berlaku. Dengan tetap menggunakan Kosly setelah perubahan berlaku, Anda dianggap menyetujui Ketentuan yang telah diperbarui."
+        },
+        "contact": {
+          "heading": "Hubungi Kami",
+          "body": "Ada pertanyaan tentang Ketentuan ini? Hubungi kami di support@kosly.app."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Kebijakan Privasi",
+      "updatedLabel": "Terakhir diperbarui: 23 September 2026",
+      "intro": "Kebijakan Privasi ini menjelaskan informasi apa saja yang dikumpulkan Kosly, bagaimana kami menggunakannya, dan pilihan yang Anda miliki. Kebijakan ini berlaku bagi pemilik kos, penjaga kos, dan penghuni yang menggunakan Kosly.",
+      "sections": {
+        "overview": {
+          "heading": "Ringkasan",
+          "body": "Kosly dibangun untuk membuat pengelolaan kos lebih transparan dan bisa dipercaya. Prinsip yang sama juga kami terapkan dalam cara kami mengelola data Anda — kami hanya mengumpulkan data yang diperlukan untuk menjalankan layanan, dan kami menjelaskannya secara terbuka di sini."
+        },
+        "collection": {
+          "heading": "Informasi yang Kami Kumpulkan",
+          "body": "Kami mengumpulkan informasi yang Anda berikan secara langsung, seperti nama, alamat email, nomor telepon, dan kata sandi saat Anda mendaftar. Kami juga mengumpulkan informasi yang dihasilkan dari penggunaan Kosly, seperti data kamar, catatan pembayaran, dan bukti transaksi, serta data teknis dasar seperti jenis perangkat dan browser untuk keperluan keamanan dan penyelesaian masalah."
+        },
+        "use": {
+          "heading": "Bagaimana Kami Menggunakan Informasi Anda",
+          "body": "Kami menggunakan informasi Anda untuk mengoperasikan akun Anda, mencatat dan menampilkan riwayat pembayaran, mengirim bukti transaksi dan notifikasi, merespons permintaan bantuan, serta meningkatkan fitur Kosly. Kami tidak menjual informasi pribadi Anda kepada pihak ketiga."
+        },
+        "sharing": {
+          "heading": "Berbagi Informasi di Dalam Kos Anda",
+          "body": "Karena inti dari Kosly adalah catatan bersama yang bisa dipercaya, sebagian informasi dapat dilihat oleh pihak lain yang terhubung dengan properti kos Anda. Pemilik dan penjaga kos dapat melihat catatan pembayaran penghuni di properti mereka, dan penghuni dapat melihat riwayat pembayarannya sendiri. Kami tidak membagikan informasi Anda kepada pihak di luar kos Anda tanpa persetujuan Anda, kecuali sebagaimana dijelaskan dalam kebijakan ini atau diwajibkan oleh hukum."
+        },
+        "security": {
+          "heading": "Keamanan Data",
+          "body": "Catatan pembayaran dienkripsi dan disimpan dengan cara yang mencegah perubahan atau penghapusan secara diam-diam — setelah tercatat, sebuah transaksi tetap menjadi bagian dari catatan permanen. Kami menggunakan langkah-langkah pengamanan standar industri untuk melindungi akun dan data Anda, namun tidak ada sistem yang sepenuhnya bebas risiko, jadi pastikan Anda juga menggunakan kata sandi yang kuat dan unik."
+        },
+        "retention": {
+          "heading": "Penyimpanan Data",
+          "body": "Kami menyimpan data akun dan transaksi Anda selama akun Anda aktif, dan untuk jangka waktu yang wajar setelahnya guna memenuhi kebutuhan hukum, akuntansi, dan penyelesaian sengketa. Catatan pembayaran secara khusus disimpan secara permanen sebagai bagian dari buku besar Kosly yang tidak dapat diubah, bahkan setelah akun ditutup."
+        },
+        "rights": {
+          "heading": "Hak Anda",
+          "body": "Anda dapat mengakses dan memperbarui sebagian besar informasi akun Anda langsung melalui aplikasi. Anda dapat meminta salinan data Anda atau meminta kami menghapus informasi pribadi yang bukan bagian dari catatan transaksi permanen dengan menghubungi kami — kami akan merespons dalam waktu yang wajar dan menjelaskan apabila ada informasi (seperti riwayat pembayaran) yang tetap perlu disimpan karena alasan hukum."
+        },
+        "cookies": {
+          "heading": "Cookie & Teknologi Serupa",
+          "body": "Kosly menggunakan cookie esensial untuk menjaga sesi masuk Anda dan mengingat preferensi bahasa Anda. Kami tidak menggunakan pelacak iklan dari pihak ketiga."
+        },
+        "children": {
+          "heading": "Privasi Anak",
+          "body": "Kosly ditujukan bagi orang dewasa yang mengelola atau tinggal di properti kos, dan tidak ditujukan bagi anak-anak. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari siapa pun yang berusia di bawah 18 tahun."
+        },
+        "changes": {
+          "heading": "Perubahan Kebijakan Ini",
+          "body": "Jika kami melakukan perubahan signifikan terhadap cara kami mengelola informasi Anda, kami akan memberi tahu Anda melalui aplikasi atau email sebelum perubahan tersebut berlaku."
+        },
+        "contact": {
+          "heading": "Hubungi Kami",
+          "body": "Ada pertanyaan tentang privasi Anda? Hubungi kami di privacy@kosly.app."
+        }
+      }
+    }
+  }
+}
