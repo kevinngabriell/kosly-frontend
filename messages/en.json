@@ -169,7 +169,6 @@
     "submitButton": "Create account",
     "submitButtonLoading": "Creating your account...",
     "loginPrompt": "Already have an account?",
-    "loginLink": "Log in",
     "errors": {
       "fullNameRequired": "Please enter your full name.",
       "emailRequired": "Please enter your email address.",
@@ -178,10 +177,20 @@
       "passwordTooShort": "Password must be at least 8 characters.",
       "passwordMismatch": "Passwords don't match.",
       "termsRequired": "You need to agree to continue.",
-      "generic": "Something went wrong. Please try again."
+      "emailTaken": "That email already has an account. Try logging in instead."
     },
-    "successHeadline": "You're in!",
-    "successBody": "Your account has been created. Log in to get started."
+    "invite": {
+      "subheadline": "You're joining through an invite. Fill in a few details and you're in.",
+      "checking": "Checking your invite...",
+      "checkFailed": "We couldn't check your invite. Check your connection and try again.",
+      "retry": "Try again",
+      "unusable": {
+        "expired": "This invite has expired. You can still create an account, then ask the owner for a new invite or join with their kos code.",
+        "revoked": "The owner cancelled this invite. You can still create an account, then ask the owner for a new one or join with their kos code.",
+        "used": "This invite has already been used. You can still create an account, then ask the owner for a new one or join with their kos code.",
+        "unknown": "We couldn't find this invite. You can still create an account, then ask the owner for a new one or join with their kos code."
+      }
+    }
   },
   "login": {
     "metadata": {
@@ -200,14 +209,14 @@
     "rememberMe": "Remember me",
     "submitButton": "Log In",
     "submitButtonLoading": "Logging in...",
-    "successMessage": "You're in! Taking you home...",
+    "successMessage": "You're in! Taking you to your kos...",
     "registerPrompt": "Don't have an account?",
     "errors": {
       "emailRequired": "Please enter your email address.",
       "emailInvalid": "That doesn't look like a valid email.",
-      "passwordRequired": "Please enter your password.",
-      "generic": "We couldn't log you in. Check your email and password and try again."
-    }
+      "passwordRequired": "Please enter your password."
+    },
+    "inviteHint": "Log in to accept your invite."
   },
   "legal": {
     "terms": {
@@ -311,6 +320,556 @@
           "body": "Questions about your privacy? Reach us at privacy@kosly.app."
         }
       }
+    }
+  },
+  "common": {
+    "logout": "Log out",
+    "localeName": {
+      "id": "Bahasa Indonesia",
+      "en": "English"
+    },
+    "roles": {
+      "owner": "Owner",
+      "tenant": "Resident",
+      "caretaker": "Caretaker"
+    },
+    "roomStatus": {
+      "vacant": "Vacant",
+      "paid": "Paid",
+      "due": "Due",
+      "overdue": "Overdue"
+    }
+  },
+  "apiErrors": {
+    "unauthenticated": "Please log in to continue.",
+    "forbidden": "You don't have permission to do that.",
+    "not_found": "We couldn't find that.",
+    "bad_request": "That request didn't look right. Please try again.",
+    "method_not_allowed": "That action isn't available.",
+    "verification_required": "Verify your account first to continue.",
+    "validation_failed": "Please check the details you entered and try again.",
+    "email_taken": "That email already has an account. Try logging in instead.",
+    "invalid_credentials": "We couldn't log you in. Check your email and password and try again.",
+    "too_many_attempts": "Too many attempts. Try again in {minutes} min.",
+    "verification_invalid": "That code isn't right. {attemptsLeft, plural, one {# try left} other {# tries left}}.",
+    "verification_expired": "That code has expired. Request a new one.",
+    "verification_locked": "Too many wrong codes. Request a new code to try again.",
+    "verification_cooldown": "Please wait {seconds} seconds before asking for another code.",
+    "verification_not_sent": "Request a code first.",
+    "already_verified": "Your account is already verified.",
+    "plan_limit_reached": "The free plan includes one kos. Upgrade to add more.",
+    "kos_read_only": "This kos is read-only on your current plan.",
+    "invite_not_found": "We couldn't find that invite.",
+    "invite_expired": "That invite has expired. Ask the owner for a new one.",
+    "invite_revoked": "That invite was cancelled by the owner.",
+    "invite_used": "That invite has already been used.",
+    "invite_not_active": "That invite is no longer active.",
+    "already_member": "You're already part of this kos.",
+    "request_exists": "You already asked to join this kos. Hang tight while the owner reviews it.",
+    "code_not_found": "We couldn't find a kos with that code. Double-check it with the owner.",
+    "room_taken": "That room was just taken. Please pick another one.",
+    "request_already_decided": "That request was already handled.",
+    "network": "We couldn't reach Kosly. Check your connection and try again.",
+    "generic": "Something went wrong. Please try again."
+  },
+  "verify": {
+    "metadata": {
+      "title": "Verify your account"
+    },
+    "loading": "Loading...",
+    "loadError": {
+      "title": "We couldn't load this page",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "headline": "Verify your account",
+    "subheadline": "Choose where to get a 6-digit code. It only takes a few seconds.",
+    "codeSubheadline": "Enter the 6-digit code we sent to {destination}.",
+    "channel": {
+      "label": "How should we send your code?",
+      "email": {
+        "label": "Email",
+        "description": "Get the code in your inbox",
+        "target": "We'll send a code to {email}."
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "description": "Get the code as a WhatsApp message",
+        "hint": "We'll send a code to your WhatsApp number."
+      }
+    },
+    "phoneLabel": "WhatsApp number",
+    "phonePlaceholder": "08xxxxxxxxxx",
+    "sendCode": "Send code",
+    "sending": "Sending...",
+    "sendCodeWait": "Send code ({seconds}s)",
+    "wrongEmail": "Wrong email? Change it",
+    "changeEmailIntro": "We were about to use {email}. Enter the correct address and we'll start over.",
+    "newEmailLabel": "New email address",
+    "newEmailPlaceholder": "you@example.com",
+    "saveEmail": "Save email",
+    "cancel": "Cancel",
+    "emailChanged": "Email updated to {email}. Send a new code when you're ready.",
+    "codeLabel": "Verification code",
+    "verifyButton": "Verify",
+    "verifying": "Verifying...",
+    "noCode": "Didn't get a code?",
+    "resend": "Resend code",
+    "resendWait": "Resend in {seconds}s",
+    "differentMethod": "Use a different method",
+    "errors": {
+      "phoneRequired": "Enter your WhatsApp number.",
+      "phoneInvalid": "That doesn't look like a valid phone number.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "That doesn't look like a valid email.",
+      "emailTaken": "That email already has an account."
+    }
+  },
+  "invite": {
+    "metadata": {
+      "title": "You're invited to join a kos"
+    },
+    "loading": "Checking your invite...",
+    "loadError": {
+      "title": "We couldn't check this invite",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "unknown": {
+      "title": "Invite not found",
+      "body": "This link doesn't match any invite. Ask the owner to send you a new one."
+    },
+    "backHome": "Back to Kosly home",
+    "unusable": {
+      "expired": {
+        "title": "This invite has expired",
+        "body": "Invites are only valid for 7 days. Ask the owner of {kos} to send you a new one."
+      },
+      "revoked": {
+        "title": "This invite was cancelled",
+        "body": "The owner of {kos} cancelled this invite. Ask them for a new one."
+      },
+      "used": {
+        "title": "This invite was already used",
+        "body": "Each invite works once. If that wasn't you, ask the owner of {kos} for a new one."
+      }
+    },
+    "joinWithCode": "Join with a kos code",
+    "login": "Log in",
+    "headline": "You're invited!",
+    "subheadline": "Join this kos on Kosly to keep everything in one place.",
+    "createAccount": "Create an account to join",
+    "haveAccount": "I already have an account",
+    "verifyFirst": "Verify your account first, then you can join.",
+    "verifyButton": "Verify my account",
+    "accept": "Join {kos}",
+    "joining": "Joining...",
+    "openApp": "Open my kos",
+    "signedInAs": "Signed in as {name} ({email}).",
+    "notYou": "Not you? Log out",
+    "summary": {
+      "bannerTitle": "You're joining {kos} as {role}",
+      "bannerBody": "Invited by {owner}",
+      "bannerBodyWithRoom": "Invited by {owner} · Room {room}",
+      "owner": "Owner: {name}",
+      "joiningAs": "Joining as",
+      "room": "Your room: {room}"
+    }
+  },
+  "join": {
+    "metadata": {
+      "title": "Join a kos"
+    },
+    "loading": "Loading...",
+    "loadError": {
+      "title": "We couldn't load this page",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "headline": "Join a kos",
+    "subheadline": "Enter the kos code your owner gave you. They'll approve your request.",
+    "another": "Join another kos",
+    "codeLabel": "Kos code",
+    "codePlaceholder": "e.g. MELATI-2K7Q",
+    "codeHelper": "Ask the kos owner for the code.",
+    "roleLabel": "I'm joining as",
+    "submit": "Send request",
+    "sending": "Sending...",
+    "errors": {
+      "codeRequired": "Enter the kos code.",
+      "codeNotFound": "We couldn't find a kos with that code. Double-check it with the owner."
+    },
+    "pending": {
+      "title": "Waiting for approval from {kos}",
+      "body": "You asked to join as {role}. The owner will review it, and this page updates on its own.",
+      "sent": "Sent {when}",
+      "cancel": "Cancel request"
+    },
+    "rejected": "{kos} declined your request. You can ask again with the right code, or check with the owner.",
+    "haveInvite": "Got an invite link instead? Just open it and you'll join straight away.",
+    "imAnOwner": "I'm an owner, set up my kos",
+    "backToApp": "Back to my kos"
+  },
+  "ownerSetup": {
+    "metadata": {
+      "title": "Set up your kos"
+    },
+    "loading": "Loading...",
+    "loadError": {
+      "title": "We couldn't load this page",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "stepOf": "Step {step} of {total}",
+    "step1": {
+      "headline": "Tell us about your kos",
+      "subheadline": "Just the basics. You can add more later.",
+      "nameLabel": "Kos name",
+      "namePlaceholder": "e.g. Kos Melati",
+      "addressLabel": "Address",
+      "addressPlaceholder": "e.g. Jl. Kenanga No. 12",
+      "cityLabel": "City",
+      "cityPlaceholder": "e.g. Yogyakarta"
+    },
+    "step2": {
+      "headline": "Add your rooms and rent",
+      "subheadline": "Create many rooms at once, then adjust any price.",
+      "generatorTitle": "Create rooms in bulk",
+      "generatorHelp": "For example, 10 rooms named Room 1 to Room 10.",
+      "countLabel": "How many rooms?",
+      "prefixLabel": "Name prefix",
+      "startLabel": "Start at number",
+      "rentLabel": "Monthly rent per room",
+      "rentHelp": "You can change any room's price below.",
+      "generate": "Create rooms",
+      "regenerate": "Replace with new rooms",
+      "listTitle": "{count} rooms",
+      "total": "Total monthly rent: {amount}",
+      "rentFor": "Monthly rent for {room}",
+      "removeRoom": "Remove {room}",
+      "addRoom": "Add a room"
+    },
+    "rooms": {
+      "defaultPrefix": "Room"
+    },
+    "errors": {
+      "nameRequired": "Enter your kos name.",
+      "nameTooShort": "The name needs at least 2 characters.",
+      "nameTooLong": "The name can be at most 60 characters.",
+      "addressRequired": "Enter the address.",
+      "cityRequired": "Enter the city.",
+      "countRange": "Enter a number from 1 to {max}.",
+      "startInvalid": "Enter a whole number.",
+      "rentRange": "Rent must be between {min} and {max}.",
+      "roomsRequired": "Create at least one room to continue."
+    },
+    "continue": "Continue",
+    "back": "Back",
+    "cancel": "Cancel",
+    "notOwner": "Not an owner? Join a kos instead",
+    "create": "Create my kos",
+    "creating": "Creating your kos...",
+    "done": {
+      "title": "{kos} is ready!",
+      "body": "{count} rooms added. Next, invite your caretaker and residents from your dashboard.",
+      "cta": "Go to my kos"
+    }
+  },
+  "upgrade": {
+    "limit": {
+      "title": "The free plan includes one kos",
+      "body": "Paid plans for more kos are coming soon. Join the waitlist and we'll tell you first."
+    },
+    "readOnly": {
+      "title": "This kos is read-only",
+      "body": "Only one kos can be edited on the free plan. Your other kos and its records are safe. Join the waitlist to unlock editing for all of them."
+    },
+    "join": "Join the waitlist",
+    "joined": {
+      "title": "You're on the list!",
+      "body": "We'll let you know as soon as paid plans are available."
+    },
+    "back": "Back to my kos"
+  },
+  "guestOnboarding": {
+    "metadata": {
+      "title": "Get started"
+    },
+    "loading": "Loading...",
+    "loadError": {
+      "title": "We couldn't load this page",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "stepOf": "Step {step} of {total}",
+    "headline": "Welcome to {kos}!",
+    "subheadline": "You're joining as {role}. This kos is managed by {owner}.",
+    "profile": {
+      "title": "Confirm your details",
+      "nameLabel": "Full name",
+      "phoneLabel": "Phone number",
+      "phonePlaceholder": "08xxxxxxxxxx",
+      "phoneHelper": "Your owner and caretaker use this to reach you about rent.",
+      "errors": {
+        "nameRequired": "Please enter your full name.",
+        "phoneRequired": "Enter your phone number.",
+        "phoneInvalid": "That doesn't look like a valid phone number."
+      }
+    },
+    "continue": "Continue",
+    "saving": "Saving...",
+    "finish": "Finish",
+    "finishing": "Finishing...",
+    "room": {
+      "title": "Confirm your room and rent",
+      "summary": "{kos}, room {room}",
+      "rent": "Rent: {amount} per month",
+      "dueDay": "Due on day {day} of each month",
+      "question": "Does this match what you agreed with the owner?",
+      "confirm": "Yes, that's right",
+      "report": "Something looks wrong",
+      "none": "We couldn't find a room assigned to you yet. You can finish and check with the owner."
+    },
+    "walkthrough": {
+      "title": "Practice logging a payment",
+      "practice": "Practice: nothing is saved",
+      "step1": "Pick a room to log a payment for.",
+      "step2": "Enter what room {room} paid.",
+      "sampleRoom": "Room {name}",
+      "amountLabel": "Amount paid",
+      "save": "Save payment",
+      "changeRoom": "Pick a different room",
+      "savedTitle": "{amount} logged for room {room}",
+      "savedNote": "In the real app, a saved payment can't be quietly edited or deleted.",
+      "finish": "Finish setup",
+      "skip": "Skip the practice"
+    },
+    "done": {
+      "title": "You're all set!",
+      "body": {
+        "tenant": "You can now see your room, rent and receipts for {kos}.",
+        "caretaker": "You're ready to help keep the records of {kos} accurate."
+      },
+      "flagged": "Thanks for telling us. We've flagged your room details so {owner} can double-check them.",
+      "cta": "Go to my kos"
+    }
+  },
+  "app": {
+    "metadata": {
+      "title": "Kosly dashboard"
+    },
+    "loading": "Loading...",
+    "loadError": {
+      "title": "We couldn't load your account",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "userMenu": {
+      "open": "Open account menu",
+      "addKos": "Add a kos",
+      "joinKos": "Join a kos with a code",
+      "logout": "Log out",
+      "plan": {
+        "free": "Free plan",
+        "pro": "Pro plan"
+      }
+    },
+    "switcher": {
+      "open": "Switch kos",
+      "allKos": "All kos",
+      "ownedBy": "Owned by {name}",
+      "pending": "{count, plural, one {# join request waiting} other {# join requests waiting}}"
+    },
+    "kosCard": {
+      "ownedBy": "Owned by {name}",
+      "rooms": "{occupied} of {total} rooms occupied",
+      "collected": "{percent}% collected",
+      "collectedLabel": "Rent collected this month",
+      "amounts": "{collected} of {expected}",
+      "overdue": "{count} overdue",
+      "requests": "{count, plural, one {# join request} other {# join requests}}",
+      "readOnly": "Read-only"
+    },
+    "portfolio": {
+      "title": "Your kos",
+      "subtitle": "The kos you're part of.",
+      "ownerTitle": "All your kos",
+      "ownerSubtitle": "An overview of the {count} kos you own.",
+      "loading": "Loading your kos...",
+      "error": {
+        "title": "We couldn't load your kos",
+        "body": "Check your connection and try again.",
+        "retry": "Try again"
+      },
+      "totals": {
+        "occupancy": "Rooms occupied",
+        "occupancyHint": "Across {count} kos",
+        "collected": "Collected this month",
+        "collectedHint": "of {expected} expected",
+        "overdue": "Overdue rooms",
+        "overdueHint": "Need a follow-up"
+      },
+      "addKos": "Add a kos",
+      "addKosLimit": "Free plan: upgrade to add more",
+      "joinAnother": "Join another kos with a code"
+    }
+  },
+  "kos": {
+    "loading": "Loading your kos...",
+    "error": {
+      "title": "We couldn't load this kos",
+      "body": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "notFound": {
+      "title": "We couldn't find that kos",
+      "body": "It may not exist, or you may not be part of it.",
+      "back": "Go to my kos"
+    },
+    "header": {
+      "address": "{address}, {city}",
+      "ownedBy": "Managed by {name}",
+      "readOnly": {
+        "title": "This kos is read-only",
+        "ownerBody": "Your free plan only allows editing one kos. Everything here is safe and can still be viewed.",
+        "otherBody": "The plan of {name} doesn't allow changes to this kos right now. You can still view everything.",
+        "cta": "See options"
+      }
+    },
+    "owner": {
+      "tabs": {
+        "overview": "Overview",
+        "rooms": "Rooms",
+        "people": "People",
+        "pending": "{count, plural, one {# join request waiting} other {# join requests waiting}}"
+      },
+      "stats": {
+        "occupancy": "Rooms occupied",
+        "vacant": "{count} vacant",
+        "collected": "Collected this month",
+        "expected": "of {amount} expected",
+        "overdue": "Overdue rooms",
+        "overdueHint": "Need a follow-up"
+      },
+      "caretakers": "Caretakers",
+      "residents": "Residents",
+      "noCaretakers": "No caretakers yet. Invite one from the panel above.",
+      "noResidents": "No residents yet."
+    },
+    "rooms": {
+      "room": "Room",
+      "resident": "Resident",
+      "rent": "Monthly rent",
+      "status": "Status",
+      "noResident": "No resident yet"
+    },
+    "people": {
+      "room": "Room {name}",
+      "flagged": "Room details flagged",
+      "call": "Call {name}"
+    },
+    "checklist": {
+      "title": "Getting started",
+      "progress": "{done} of {total} done",
+      "allDone": "All done. Nice work!",
+      "progressLabel": "Setup progress",
+      "hide": "Hide",
+      "invite": "Invite",
+      "items": {
+        "setupKos": "Set up your kos",
+        "inviteCaretaker": "Invite your caretaker",
+        "inviteResident": "Invite your first resident"
+      },
+      "doneMark": "(done)",
+      "todoMark": "(not done yet)"
+    },
+    "requests": {
+      "title": "Waiting to join",
+      "subtitle": "These people asked to join with your kos code. Only you can approve them.",
+      "approve": "Approve",
+      "decline": "Decline",
+      "chooseRoom": "Which room will they take?",
+      "selectRoom": "Select a room",
+      "confirm": "Confirm",
+      "noVacantRooms": "You have no vacant rooms to assign.",
+      "roomTaken": "That room was just taken. Pick another one."
+    },
+    "invites": {
+      "title": "Bring people in",
+      "subtitle": "Send a personal invite link, or share your kos code and approve requests yourself.",
+      "codeLabel": "Your kos code",
+      "codeHelp": "People enter this code to ask to join. Nothing happens until you approve.",
+      "copy": "Copy",
+      "copied": "Copied",
+      "newInvite": "New invite link",
+      "regenerate": "New code",
+      "regenerateWarning": "The old code will stop working.",
+      "regenerateConfirm": "Yes, replace it",
+      "cancel": "Cancel",
+      "listTitle": "Invite links",
+      "empty": "No invite links yet.",
+      "room": "Room {name}",
+      "status": {
+        "active": "Active",
+        "used": "Used",
+        "expired": "Expired",
+        "revoked": "Cancelled"
+      },
+      "expiresOn": "Valid until {date}",
+      "createdOn": "Created {date}",
+      "copyLink": "Copy link",
+      "revoke": "Cancel invite",
+      "revokeConfirm": "Yes, cancel it"
+    },
+    "invite": {
+      "title": "Invite someone",
+      "close": "Close",
+      "roleLabel": "They will join as",
+      "roleHelp": {
+        "caretaker": "Sees all rooms and residents and helps with the day-to-day records.",
+        "tenant": "Sees their own room, rent and receipts."
+      },
+      "roomLabel": "Room for this resident",
+      "selectRoom": "Select a room",
+      "noVacantRooms": "You have no vacant rooms to assign.",
+      "create": "Create invite link",
+      "creating": "Creating...",
+      "errors": {
+        "roomRequired": "Choose a room for this resident.",
+        "roomUnavailable": "That room isn't available. Pick another one."
+      },
+      "createdBody": "Share this link with them. It works once and stays valid for {days} days.",
+      "linkLabel": "Invite link",
+      "copy": "Copy",
+      "copied": "Copied",
+      "shareWhatsApp": "Share on WhatsApp",
+      "shareMessage": "You're invited to join {kos} on Kosly as {role}. Open this link: {url}"
+    },
+    "caretaker": {
+      "occupancy": "Rooms occupied",
+      "vacant": "{count} vacant",
+      "overdue": "Overdue rooms",
+      "overdueHint": "Need a follow-up",
+      "roomsTitle": "Rooms",
+      "residents": "Residents",
+      "noResidents": "No residents yet."
+    },
+    "resident": {
+      "yourRoom": "Your room",
+      "rent": "{amount} per month",
+      "dueDay": "Due on day {day} of each month",
+      "statusNote": {
+        "paid": "Paid for this month. Thank you!",
+        "due": "Rent for this month isn't paid yet.",
+        "overdue": "Rent is overdue. Please pay as soon as you can.",
+        "vacant": "This room is currently unassigned."
+      },
+      "noRoom": "You aren't assigned to a room yet.",
+      "paymentsTitle": "Payment history",
+      "noPayments": "No payments recorded yet.",
+      "paymentMeta": "{date} · logged by {by}",
+      "caretakers": "Your caretakers",
+      "noCaretakers": "No caretaker has joined yet."
     }
   }
 }

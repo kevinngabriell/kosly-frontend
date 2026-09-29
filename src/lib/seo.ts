@@ -57,6 +57,14 @@ export function buildPageMetadata({
   };
 }
 
+/** Metadata for signed-in and in-flow pages (verify, join, onboarding, the app): titled, never indexed. */
+export function buildNoIndexMetadata({ title }: { title: string }): Metadata {
+  return {
+    title,
+    robots: { index: false, follow: false },
+  };
+}
+
 /** schema.org graph: Movira as the publishing organization, Kosly as its brand and website. */
 export function buildStructuredData({
   locale: rawLocale,

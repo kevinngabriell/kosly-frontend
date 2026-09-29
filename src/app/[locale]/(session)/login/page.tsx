@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { firstParam, parseInviteToken } from "@/lib/params";
 import { buildPageMetadata } from "@/lib/seo";
+import { safeNext } from "@/lib/session";
 import { LoginView } from "./_components/LoginView";
 
 export async function generateMetadata({
@@ -17,9 +19,15 @@ export async function generateMetadata({
   });
 }
 
-export default async function LoginPage({ params }: PageProps<"/[locale]/login">) {
+export default async function LoginPage({ params, searchParams }: PageProps<"/[locale]/login">) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <LoginView />;
+  const resolved = await searchParams;
+  return (
+    <LoginView
+      next={safeNext(firstParam(resolved.next)) ?? undefined}
+      invite={parseInviteToken(resolved.invite)}
+    />
+  );
 }

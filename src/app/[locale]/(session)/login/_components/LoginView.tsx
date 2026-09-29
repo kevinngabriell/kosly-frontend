@@ -19,7 +19,12 @@ import { useTranslations } from "next-intl";
 import { type FormEvent, useEffect, useState } from "react";
 import { Blob } from "@/components/Blob";
 import { Link, useRouter } from "@/i18n/navigation";
-import { apiFetch } from "@/lib/api-client";
+import { apiJson } from "@/lib/api-client";
+import type { MeDto } from "@/lib/api-types";
+import { loginDestination, useSession } from "@/lib/session";
+import { useApiErrorMessage } from "@/lib/useApiErrorMessage";
+import { withQuery } from "@/lib/params";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 
 type FormValues = {
   email: string;
@@ -33,21 +38,33 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const INITIAL_VALUES: FormValues = { email: "", password: "", rememberMe: false };
 
-export function LoginView() {
+export function LoginView({ next, invite }: { next?: string; invite?: string }) {
   const t = useTranslations("login");
   const tNav = useTranslations("landing.nav");
   const router = useRouter();
+  const { state, setMe } = useSession();
+  const errorMessage = useApiErrorMessage();
 
   const [values, setValues] = useState<FormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<FormErrors>({});
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
+  // Someone who is already signed in has no business on this page: send them where they belong.
   useEffect(() => {
-    if (status !== "success") return;
-    const timeout = setTimeout(() => router.push("/"), 1200);
+    if (state.status === "authenticated" && status !== "success") {
+      router.replace(loginDestination(state.me, { next, invite }));
+    }
+  }, [state, status, next, invite, router]);
+
+  // After a fresh login, hold the success message for a moment, then move on.
+  useEffect(() => {
+    if (status !== "success" || state.status !== "authenticated") return;
+    const destination = loginDestination(state.me, { next, invite });
+    const timeout = setTimeout(() => router.replace(destination), 900);
     return () => clearTimeout(timeout);
-  }, [status, router]);
+  }, [status, state, next, invite, router]);
 
   function updateField<K extends keyof FormValues>(field: K, value: FormValues[K]) {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -71,19 +88,19 @@ export function LoginView() {
     if (Object.keys(nextErrors).length > 0) return;
 
     setStatus("submitting");
+    setSubmitError(null);
     try {
-      const res = await apiFetch("/api/v1/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const me = await apiJson<MeDto>("/api/v1/auth/login", {
+        body: {
           email: values.email.trim(),
           password: values.password,
           rememberMe: values.rememberMe,
-        }),
+        },
       });
-      if (!res.ok) throw new Error("Login failed");
       setStatus("success");
-    } catch {
+      setMe(me);
+    } catch (error) {
+      setSubmitError(errorMessage(error));
       setStatus("error");
     }
   }
@@ -118,11 +135,12 @@ export function LoginView() {
             </HStack>
 
             <HStack gap={3}>
+              <LocaleSwitcher tone="onColor" />
               <Text fontSize="sm" color="gray.700" display={{ base: "none", sm: "block" }}>
                 {t("registerPrompt")}
               </Text>
               <Button asChild variant="outline" colorPalette="primary" size="sm" minH="10" borderRadius="full" bg="white">
-                <Link href="/register">{tNav("register")}</Link>
+                <Link href={withQuery("/register", { invite })}>{tNav("register")}</Link>
               </Button>
             </HStack>
           </HStack>
@@ -141,7 +159,7 @@ export function LoginView() {
             {t("headline")}
           </Heading>
           <Text fontSize={{ base: "md", md: "lg" }} color="gray.700">
-            {t("subheadline")}
+            {invite ? t("inviteHint") : t("subheadline")}
           </Text>
         </VStack>
 
@@ -228,9 +246,9 @@ export function LoginView() {
                   </Checkbox.Label>
                 </Checkbox.Root>
 
-                {status === "error" && (
-                  <Text color="critical.fg" fontSize="sm" fontWeight="600">
-                    {t("errors.generic")}
+                {status === "error" && submitError && (
+                  <Text color="critical.fg" fontSize="sm" fontWeight="600" role="alert">
+                    {submitError}
                   </Text>
                 )}
 

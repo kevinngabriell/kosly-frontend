@@ -10,3 +10,6 @@ export function getSiteUrl(): URL {
   const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
   return new URL(explicit ?? (vercel ? `https://${vercel}` : "http://localhost:3000"));
 }
+
+// WhatsApp's "share a message" endpoint; the invite flow opens it with the link pre-filled.
+export const WHATSAPP_SHARE_URL = "https://wa.me/";

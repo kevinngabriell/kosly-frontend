@@ -5,7 +5,6 @@ import {
   Button,
   Checkbox,
   Field,
-  Heading,
   IconButton,
   Input,
   InputGroup,
@@ -13,11 +12,13 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { CheckCircle2, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type FormEvent, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { apiFetch } from "@/lib/api-client";
+import { ApiError, apiJson } from "@/lib/api-client";
+import type { MeDto } from "@/lib/api-types";
+import { useApiErrorMessage } from "@/lib/useApiErrorMessage";
 import { ROLE_PALETTE, type Role } from "./register.types";
 
 type FormValues = {
@@ -43,15 +44,37 @@ const INITIAL_VALUES: FormValues = {
   agreeTerms: false,
 };
 
-export function RegisterForm({ role }: { role: Role }) {
+// Field-level codes the API can send back for a 422, mapped to the same copy the client checks use.
+const SERVER_FIELD_ERRORS: Partial<Record<keyof FormValues, Record<string, string>>> = {
+  fullName: { required: "fullNameRequired" },
+  email: { required: "emailRequired", invalid: "emailInvalid" },
+  phone: { invalid: "phoneInvalid" },
+  password: { too_short: "passwordTooShort" },
+};
+
+export function RegisterForm({
+  role,
+  inviteToken,
+  disabled,
+  onRegistered,
+}: {
+  role: Role;
+  /** Set when the person is registering through a valid invite link. */
+  inviteToken?: string;
+  /** True while the invite is still being checked, so nobody submits against an unknown invite. */
+  disabled?: boolean;
+  onRegistered: (me: MeDto) => void;
+}) {
   const t = useTranslations("register");
+  const errorMessage = useApiErrorMessage();
   const palette = ROLE_PALETTE[role];
 
   const [values, setValues] = useState<FormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<FormErrors>({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function updateField<K extends keyof FormValues>(field: K, value: FormValues[K]) {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -77,49 +100,41 @@ export function RegisterForm({ role }: { role: Role }) {
     if (Object.keys(nextErrors).length > 0) return;
 
     setStatus("submitting");
+    setSubmitError(null);
     try {
-      const res = await apiFetch("/api/v1/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const me = await apiJson<MeDto>("/api/v1/auth/register", {
+        body: {
           fullName: values.fullName.trim(),
           email: values.email.trim(),
           phone: values.phone.trim() || undefined,
           password: values.password,
-          role,
-        }),
+          intent: role,
+          inviteToken,
+        },
       });
-      if (!res.ok) throw new Error("Registration failed");
-      setStatus("success");
-    } catch {
+      // Keep the button busy: the parent navigates away to /verify.
+      onRegistered(me);
+    } catch (error) {
+      if (error instanceof ApiError && error.code === "email_taken") {
+        setErrors({ email: t("errors.emailTaken") });
+        setStatus("idle");
+        return;
+      }
+      if (error instanceof ApiError && error.code === "validation_failed" && error.body?.fields) {
+        const mapped: FormErrors = {};
+        for (const [field, code] of Object.entries(error.body.fields)) {
+          const key = SERVER_FIELD_ERRORS[field as keyof FormValues]?.[code];
+          if (key) mapped[field as keyof FormValues] = t(`errors.${key}`);
+        }
+        if (Object.keys(mapped).length > 0) {
+          setErrors(mapped);
+          setStatus("idle");
+          return;
+        }
+      }
+      setSubmitError(errorMessage(error));
       setStatus("error");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <VStack gap={4} textAlign="center" py={6}>
-        <Box
-          w={14}
-          h={14}
-          borderRadius="full"
-          bg={`${palette}.solid`}
-          color="white"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <CheckCircle2 size={28} />
-        </Box>
-        <Heading as="h2" fontFamily="heading" fontWeight="700" fontSize="xl" color="gray.900">
-          {t("successHeadline")}
-        </Heading>
-        <Text color="gray.700">{t("successBody")}</Text>
-        <Button asChild colorPalette={palette} borderRadius="full" minH="12" px={8}>
-          <Link href="/login">{t("loginLink")}</Link>
-        </Button>
-      </VStack>
-    );
   }
 
   return (
@@ -268,9 +283,9 @@ export function RegisterForm({ role }: { role: Role }) {
           <Field.ErrorText>{errors.agreeTerms}</Field.ErrorText>
         </Field.Root>
 
-        {status === "error" && (
-          <Text color="critical.fg" fontSize="sm" fontWeight="600">
-            {t("errors.generic")}
+        {status === "error" && submitError && (
+          <Text color="critical.fg" fontSize="sm" fontWeight="600" role="alert">
+            {submitError}
           </Text>
         )}
 
@@ -280,6 +295,7 @@ export function RegisterForm({ role }: { role: Role }) {
           size="lg"
           minH="14"
           borderRadius="full"
+          disabled={disabled}
           loading={status === "submitting"}
           loadingText={t("submitButtonLoading")}
           _hover={{ transform: "translateY(-2px)", boxShadow: "cardHover" }}

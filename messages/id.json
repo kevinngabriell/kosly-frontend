@@ -169,7 +169,6 @@
     "submitButton": "Buat akun",
     "submitButtonLoading": "Lagi bikin akun kamu...",
     "loginPrompt": "Udah punya akun?",
-    "loginLink": "Masuk",
     "errors": {
       "fullNameRequired": "Isi dulu nama lengkap kamu.",
       "emailRequired": "Isi dulu alamat email kamu.",
@@ -178,10 +177,20 @@
       "passwordTooShort": "Kata sandi minimal 8 karakter.",
       "passwordMismatch": "Kata sandinya nggak sama.",
       "termsRequired": "Kamu perlu setuju dulu buat lanjut.",
-      "generic": "Ada yang salah nih. Coba lagi ya."
+      "emailTaken": "Email itu sudah punya akun. Coba masuk aja."
     },
-    "successHeadline": "Berhasil!",
-    "successBody": "Akun kamu udah dibuat. Masuk buat mulai pakai Kosly."
+    "invite": {
+      "subheadline": "Kamu gabung lewat undangan. Isi beberapa data, langsung masuk.",
+      "checking": "Lagi ngecek undanganmu...",
+      "checkFailed": "Kami nggak bisa ngecek undanganmu. Cek koneksi lalu coba lagi.",
+      "retry": "Coba lagi",
+      "unusable": {
+        "expired": "Undangan ini sudah kedaluwarsa. Kamu tetap bisa buat akun, lalu minta undangan baru ke pemilik kos atau gabung pakai kode kos.",
+        "revoked": "Pemilik kos membatalkan undangan ini. Kamu tetap bisa buat akun, lalu minta yang baru ke pemilik kos atau gabung pakai kode kos.",
+        "used": "Undangan ini sudah dipakai. Kamu tetap bisa buat akun, lalu minta yang baru ke pemilik kos atau gabung pakai kode kos.",
+        "unknown": "Undangan ini nggak ketemu. Kamu tetap bisa buat akun, lalu minta yang baru ke pemilik kos atau gabung pakai kode kos."
+      }
+    }
   },
   "login": {
     "metadata": {
@@ -200,14 +209,14 @@
     "rememberMe": "Ingat saya",
     "submitButton": "Masuk",
     "submitButtonLoading": "Lagi masuk...",
-    "successMessage": "Berhasil masuk! Ngarahin kamu ke beranda...",
+    "successMessage": "Berhasil masuk! Ngarahin kamu ke kos kamu...",
     "registerPrompt": "Belum punya akun?",
     "errors": {
       "emailRequired": "Isi dulu alamat email kamu.",
       "emailInvalid": "Formatnya kayaknya belum bener nih.",
-      "passwordRequired": "Isi dulu kata sandi kamu.",
-      "generic": "Kami nggak bisa masukin kamu. Coba cek lagi email dan kata sandinya ya."
-    }
+      "passwordRequired": "Isi dulu kata sandi kamu."
+    },
+    "inviteHint": "Masuk buat menerima undanganmu."
   },
   "legal": {
     "terms": {
@@ -311,6 +320,556 @@
           "body": "Ada pertanyaan tentang privasi Anda? Hubungi kami di privacy@kosly.app."
         }
       }
+    }
+  },
+  "common": {
+    "logout": "Keluar",
+    "localeName": {
+      "id": "Bahasa Indonesia",
+      "en": "English"
+    },
+    "roles": {
+      "owner": "Pemilik Kos",
+      "tenant": "Penghuni",
+      "caretaker": "Penjaga Kos"
+    },
+    "roomStatus": {
+      "vacant": "Kosong",
+      "paid": "Lunas",
+      "due": "Belum bayar",
+      "overdue": "Terlambat"
+    }
+  },
+  "apiErrors": {
+    "unauthenticated": "Masuk dulu ya buat lanjut.",
+    "forbidden": "Kamu nggak punya izin buat itu.",
+    "not_found": "Yang kamu cari nggak ketemu.",
+    "bad_request": "Permintaannya kayaknya belum bener. Coba lagi ya.",
+    "method_not_allowed": "Aksi itu nggak tersedia.",
+    "verification_required": "Verifikasi akun kamu dulu buat lanjut.",
+    "validation_failed": "Cek lagi data yang kamu isi, lalu coba lagi ya.",
+    "email_taken": "Email itu sudah punya akun. Coba masuk aja.",
+    "invalid_credentials": "Kami nggak bisa masukin kamu. Coba cek lagi email dan kata sandinya ya.",
+    "too_many_attempts": "Terlalu banyak percobaan. Coba lagi dalam {minutes} menit.",
+    "verification_invalid": "Kodenya belum bener. Sisa {attemptsLeft} percobaan.",
+    "verification_expired": "Kodenya sudah kedaluwarsa. Minta kode baru ya.",
+    "verification_locked": "Terlalu banyak kode salah. Minta kode baru buat coba lagi.",
+    "verification_cooldown": "Tunggu {seconds} detik dulu sebelum minta kode lagi.",
+    "verification_not_sent": "Minta kodenya dulu ya.",
+    "already_verified": "Akun kamu sudah terverifikasi.",
+    "plan_limit_reached": "Paket gratis mencakup satu kos. Upgrade buat nambah lagi.",
+    "kos_read_only": "Kos ini hanya bisa dilihat di paket kamu sekarang.",
+    "invite_not_found": "Undangan itu nggak ketemu.",
+    "invite_expired": "Undangan itu sudah kedaluwarsa. Minta yang baru ke pemilik kos ya.",
+    "invite_revoked": "Undangan itu dibatalkan oleh pemilik kos.",
+    "invite_used": "Undangan itu sudah dipakai.",
+    "invite_not_active": "Undangan itu sudah nggak aktif.",
+    "already_member": "Kamu sudah jadi bagian dari kos ini.",
+    "request_exists": "Kamu sudah minta gabung ke kos ini. Tunggu pemilik kos meninjaunya ya.",
+    "code_not_found": "Kos dengan kode itu nggak ketemu. Cek lagi ke pemilik kos ya.",
+    "room_taken": "Kamar itu baru saja terisi. Pilih kamar lain ya.",
+    "request_already_decided": "Permintaan itu sudah ditangani.",
+    "network": "Kami nggak bisa terhubung ke Kosly. Cek koneksi kamu lalu coba lagi.",
+    "generic": "Ada yang salah nih. Coba lagi ya."
+  },
+  "verify": {
+    "metadata": {
+      "title": "Verifikasi akun kamu"
+    },
+    "loading": "Lagi memuat...",
+    "loadError": {
+      "title": "Halaman ini nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "headline": "Verifikasi akun kamu",
+    "subheadline": "Pilih ke mana kode 6 digit dikirim. Cuma butuh beberapa detik.",
+    "codeSubheadline": "Masukkan kode 6 digit yang kami kirim ke {destination}.",
+    "channel": {
+      "label": "Kode mau dikirim lewat mana?",
+      "email": {
+        "label": "Email",
+        "description": "Kode masuk ke kotak masuk kamu",
+        "target": "Kami kirim kode ke {email}."
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "description": "Kode dikirim lewat pesan WhatsApp",
+        "hint": "Kami kirim kode ke nomor WhatsApp kamu."
+      }
+    },
+    "phoneLabel": "Nomor WhatsApp",
+    "phonePlaceholder": "08xxxxxxxxxx",
+    "sendCode": "Kirim kode",
+    "sending": "Lagi mengirim...",
+    "sendCodeWait": "Kirim kode ({seconds} dtk)",
+    "wrongEmail": "Email salah? Ganti di sini",
+    "changeEmailIntro": "Tadinya kami pakai {email}. Masukkan alamat yang benar, lalu kita mulai lagi.",
+    "newEmailLabel": "Alamat email baru",
+    "newEmailPlaceholder": "kamu@contoh.com",
+    "saveEmail": "Simpan email",
+    "cancel": "Batal",
+    "emailChanged": "Email diganti ke {email}. Kirim kode baru kalau sudah siap.",
+    "codeLabel": "Kode verifikasi",
+    "verifyButton": "Verifikasi",
+    "verifying": "Lagi memverifikasi...",
+    "noCode": "Kodenya belum masuk?",
+    "resend": "Kirim ulang kode",
+    "resendWait": "Kirim ulang dalam {seconds} dtk",
+    "differentMethod": "Pakai cara lain",
+    "errors": {
+      "phoneRequired": "Isi nomor WhatsApp kamu.",
+      "phoneInvalid": "Nomor HP-nya kayaknya belum bener nih.",
+      "emailRequired": "Isi dulu alamat email kamu.",
+      "emailInvalid": "Formatnya kayaknya belum bener nih.",
+      "emailTaken": "Email itu sudah punya akun."
+    }
+  },
+  "invite": {
+    "metadata": {
+      "title": "Kamu diundang bergabung ke sebuah kos"
+    },
+    "loading": "Lagi ngecek undanganmu...",
+    "loadError": {
+      "title": "Undangan ini nggak bisa dicek",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "unknown": {
+      "title": "Undangan nggak ketemu",
+      "body": "Link ini nggak cocok dengan undangan mana pun. Minta pemilik kos kirim yang baru ya."
+    },
+    "backHome": "Kembali ke beranda Kosly",
+    "unusable": {
+      "expired": {
+        "title": "Undangan ini sudah kedaluwarsa",
+        "body": "Undangan cuma berlaku 7 hari. Minta pemilik {kos} kirim yang baru ya."
+      },
+      "revoked": {
+        "title": "Undangan ini dibatalkan",
+        "body": "Pemilik {kos} membatalkan undangan ini. Minta yang baru ke mereka ya."
+      },
+      "used": {
+        "title": "Undangan ini sudah dipakai",
+        "body": "Tiap undangan cuma bisa dipakai sekali. Kalau itu bukan kamu, minta yang baru ke pemilik {kos}."
+      }
+    },
+    "joinWithCode": "Gabung pakai kode kos",
+    "login": "Masuk",
+    "headline": "Kamu diundang!",
+    "subheadline": "Gabung ke kos ini di Kosly biar semuanya rapi di satu tempat.",
+    "createAccount": "Buat akun buat gabung",
+    "haveAccount": "Saya sudah punya akun",
+    "verifyFirst": "Verifikasi akun kamu dulu, lalu kamu bisa gabung.",
+    "verifyButton": "Verifikasi akun saya",
+    "accept": "Gabung ke {kos}",
+    "joining": "Lagi bergabung...",
+    "openApp": "Buka kos saya",
+    "signedInAs": "Masuk sebagai {name} ({email}).",
+    "notYou": "Bukan kamu? Keluar",
+    "summary": {
+      "bannerTitle": "Kamu bergabung ke {kos} sebagai {role}",
+      "bannerBody": "Diundang oleh {owner}",
+      "bannerBodyWithRoom": "Diundang oleh {owner} · Kamar {room}",
+      "owner": "Pemilik: {name}",
+      "joiningAs": "Bergabung sebagai",
+      "room": "Kamar kamu: {room}"
+    }
+  },
+  "join": {
+    "metadata": {
+      "title": "Gabung ke kos"
+    },
+    "loading": "Lagi memuat...",
+    "loadError": {
+      "title": "Halaman ini nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "headline": "Gabung ke kos",
+    "subheadline": "Masukkan kode kos dari pemilik kos kamu. Mereka akan menyetujui permintaanmu.",
+    "another": "Gabung ke kos lain",
+    "codeLabel": "Kode kos",
+    "codePlaceholder": "cth. MELATI-2K7Q",
+    "codeHelper": "Minta kodenya ke pemilik kos.",
+    "roleLabel": "Saya bergabung sebagai",
+    "submit": "Kirim permintaan",
+    "sending": "Lagi mengirim...",
+    "errors": {
+      "codeRequired": "Isi kode kos dulu.",
+      "codeNotFound": "Kos dengan kode itu nggak ketemu. Cek lagi ke pemilik kos ya."
+    },
+    "pending": {
+      "title": "Menunggu persetujuan dari {kos}",
+      "body": "Kamu minta bergabung sebagai {role}. Pemilik kos akan meninjaunya, dan halaman ini diperbarui otomatis.",
+      "sent": "Dikirim {when}",
+      "cancel": "Batalkan permintaan"
+    },
+    "rejected": "{kos} menolak permintaanmu. Kamu bisa minta lagi dengan kode yang benar, atau tanya langsung ke pemilik kos.",
+    "haveInvite": "Punya link undangan? Buka aja, kamu langsung bergabung.",
+    "imAnOwner": "Saya pemilik kos, siapkan kos saya",
+    "backToApp": "Kembali ke kos saya"
+  },
+  "ownerSetup": {
+    "metadata": {
+      "title": "Siapkan kos kamu"
+    },
+    "loading": "Lagi memuat...",
+    "loadError": {
+      "title": "Halaman ini nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "stepOf": "Langkah {step} dari {total}",
+    "step1": {
+      "headline": "Ceritakan tentang kos kamu",
+      "subheadline": "Yang dasar aja dulu. Sisanya bisa ditambah nanti.",
+      "nameLabel": "Nama kos",
+      "namePlaceholder": "cth. Kos Melati",
+      "addressLabel": "Alamat",
+      "addressPlaceholder": "cth. Jl. Kenanga No. 12",
+      "cityLabel": "Kota",
+      "cityPlaceholder": "cth. Yogyakarta"
+    },
+    "step2": {
+      "headline": "Tambahkan kamar dan harga sewa",
+      "subheadline": "Buat banyak kamar sekaligus, lalu ubah harga yang perlu.",
+      "generatorTitle": "Buat kamar sekaligus",
+      "generatorHelp": "Contoh: 10 kamar bernama Kamar 1 sampai Kamar 10.",
+      "countLabel": "Berapa kamar?",
+      "prefixLabel": "Awalan nama",
+      "startLabel": "Mulai dari nomor",
+      "rentLabel": "Sewa per bulan tiap kamar",
+      "rentHelp": "Harga tiap kamar bisa diubah di bawah.",
+      "generate": "Buat kamar",
+      "regenerate": "Ganti dengan kamar baru",
+      "listTitle": "{count} kamar",
+      "total": "Total sewa per bulan: {amount}",
+      "rentFor": "Sewa bulanan untuk {room}",
+      "removeRoom": "Hapus {room}",
+      "addRoom": "Tambah kamar"
+    },
+    "rooms": {
+      "defaultPrefix": "Kamar"
+    },
+    "errors": {
+      "nameRequired": "Isi nama kos dulu.",
+      "nameTooShort": "Nama minimal 2 karakter.",
+      "nameTooLong": "Nama maksimal 60 karakter.",
+      "addressRequired": "Isi alamatnya dulu.",
+      "cityRequired": "Isi kotanya dulu.",
+      "countRange": "Isi angka dari 1 sampai {max}.",
+      "startInvalid": "Isi angka bulat.",
+      "rentRange": "Sewa harus antara {min} dan {max}.",
+      "roomsRequired": "Buat minimal satu kamar buat lanjut."
+    },
+    "continue": "Lanjut",
+    "back": "Kembali",
+    "cancel": "Batal",
+    "notOwner": "Bukan pemilik kos? Gabung ke kos aja",
+    "create": "Buat kos saya",
+    "creating": "Lagi membuat kos kamu...",
+    "done": {
+      "title": "{kos} sudah siap!",
+      "body": "{count} kamar ditambahkan. Selanjutnya, undang penjaga kos dan penghuni dari dashboard kamu.",
+      "cta": "Buka kos saya"
+    }
+  },
+  "upgrade": {
+    "limit": {
+      "title": "Paket gratis mencakup satu kos",
+      "body": "Paket berbayar buat lebih dari satu kos segera hadir. Gabung daftar tunggu, nanti kami kabari duluan."
+    },
+    "readOnly": {
+      "title": "Kos ini hanya bisa dilihat",
+      "body": "Di paket gratis cuma satu kos yang bisa diubah. Kos lain dan catatannya tetap aman. Gabung daftar tunggu buat membuka semuanya."
+    },
+    "join": "Gabung daftar tunggu",
+    "joined": {
+      "title": "Kamu sudah masuk daftar tunggu!",
+      "body": "Kami kabari begitu paket berbayar tersedia."
+    },
+    "back": "Kembali ke kos saya"
+  },
+  "guestOnboarding": {
+    "metadata": {
+      "title": "Mulai"
+    },
+    "loading": "Lagi memuat...",
+    "loadError": {
+      "title": "Halaman ini nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "stepOf": "Langkah {step} dari {total}",
+    "headline": "Selamat datang di {kos}!",
+    "subheadline": "Kamu bergabung sebagai {role}. Kos ini dikelola {owner}.",
+    "profile": {
+      "title": "Cek data kamu",
+      "nameLabel": "Nama lengkap",
+      "phoneLabel": "Nomor HP",
+      "phonePlaceholder": "08xxxxxxxxxx",
+      "phoneHelper": "Pemilik kos dan penjaga kos pakai ini buat menghubungi kamu soal sewa.",
+      "errors": {
+        "nameRequired": "Isi dulu nama lengkap kamu.",
+        "phoneRequired": "Isi nomor HP kamu.",
+        "phoneInvalid": "Nomor HP-nya kayaknya belum bener nih."
+      }
+    },
+    "continue": "Lanjut",
+    "saving": "Lagi menyimpan...",
+    "finish": "Selesai",
+    "finishing": "Lagi menyelesaikan...",
+    "room": {
+      "title": "Cek kamar dan harga sewa kamu",
+      "summary": "{kos}, kamar {room}",
+      "rent": "Sewa: {amount} per bulan",
+      "dueDay": "Jatuh tempo tanggal {day} tiap bulan",
+      "question": "Apakah ini sesuai kesepakatan kamu dengan pemilik kos?",
+      "confirm": "Ya, sudah benar",
+      "report": "Ada yang kurang pas",
+      "none": "Kamar buat kamu belum ketemu. Selesaikan dulu dan tanya ke pemilik kos ya."
+    },
+    "walkthrough": {
+      "title": "Latihan mencatat pembayaran",
+      "practice": "Latihan: nggak ada yang disimpan",
+      "step1": "Pilih kamar yang mau dicatat pembayarannya.",
+      "step2": "Masukkan jumlah yang dibayar kamar {room}.",
+      "sampleRoom": "Kamar {name}",
+      "amountLabel": "Jumlah dibayar",
+      "save": "Simpan pembayaran",
+      "changeRoom": "Pilih kamar lain",
+      "savedTitle": "{amount} tercatat untuk kamar {room}",
+      "savedNote": "Di aplikasi asli, pembayaran yang sudah disimpan nggak bisa diam-diam diubah atau dihapus.",
+      "finish": "Selesai",
+      "skip": "Lewati latihan"
+    },
+    "done": {
+      "title": "Semua siap!",
+      "body": {
+        "tenant": "Sekarang kamu bisa lihat kamar, sewa, dan bukti pembayaran di {kos}.",
+        "caretaker": "Kamu siap bantu menjaga catatan {kos} tetap akurat."
+      },
+      "flagged": "Makasih sudah bilang. Kami tandai data kamar kamu supaya {owner} bisa mengeceknya lagi.",
+      "cta": "Buka kos saya"
+    }
+  },
+  "app": {
+    "metadata": {
+      "title": "Dashboard Kosly"
+    },
+    "loading": "Lagi memuat...",
+    "loadError": {
+      "title": "Akun kamu nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "userMenu": {
+      "open": "Buka menu akun",
+      "addKos": "Tambah kos",
+      "joinKos": "Gabung ke kos pakai kode",
+      "logout": "Keluar",
+      "plan": {
+        "free": "Paket gratis",
+        "pro": "Paket Pro"
+      }
+    },
+    "switcher": {
+      "open": "Ganti kos",
+      "allKos": "Semua kos",
+      "ownedBy": "Milik {name}",
+      "pending": "{count} permintaan gabung menunggu"
+    },
+    "kosCard": {
+      "ownedBy": "Milik {name}",
+      "rooms": "{occupied} dari {total} kamar terisi",
+      "collected": "{percent}% terkumpul",
+      "collectedLabel": "Sewa terkumpul bulan ini",
+      "amounts": "{collected} dari {expected}",
+      "overdue": "{count} terlambat",
+      "requests": "{count} permintaan gabung",
+      "readOnly": "Hanya lihat"
+    },
+    "portfolio": {
+      "title": "Kos kamu",
+      "subtitle": "Kos-kos yang kamu ikuti.",
+      "ownerTitle": "Semua kos kamu",
+      "ownerSubtitle": "Ringkasan {count} kos milik kamu.",
+      "loading": "Lagi memuat kos kamu...",
+      "error": {
+        "title": "Kos kamu nggak bisa dimuat",
+        "body": "Cek koneksi kamu lalu coba lagi.",
+        "retry": "Coba lagi"
+      },
+      "totals": {
+        "occupancy": "Kamar terisi",
+        "occupancyHint": "Di {count} kos",
+        "collected": "Terkumpul bulan ini",
+        "collectedHint": "dari {expected} yang diharapkan",
+        "overdue": "Kamar terlambat bayar",
+        "overdueHint": "Perlu ditindaklanjuti"
+      },
+      "addKos": "Tambah kos",
+      "addKosLimit": "Paket gratis: upgrade buat nambah",
+      "joinAnother": "Gabung ke kos lain pakai kode"
+    }
+  },
+  "kos": {
+    "loading": "Lagi memuat kos kamu...",
+    "error": {
+      "title": "Kos ini nggak bisa dimuat",
+      "body": "Cek koneksi kamu lalu coba lagi.",
+      "retry": "Coba lagi"
+    },
+    "notFound": {
+      "title": "Kos itu nggak ketemu",
+      "body": "Mungkin kos itu nggak ada, atau kamu bukan bagian dari kos itu.",
+      "back": "Buka kos saya"
+    },
+    "header": {
+      "address": "{address}, {city}",
+      "ownedBy": "Dikelola {name}",
+      "readOnly": {
+        "title": "Kos ini hanya bisa dilihat",
+        "ownerBody": "Paket gratis kamu cuma boleh mengubah satu kos. Semua data di sini aman dan tetap bisa dilihat.",
+        "otherBody": "Paket {name} saat ini nggak mengizinkan perubahan di kos ini. Kamu tetap bisa melihat semuanya.",
+        "cta": "Lihat pilihan"
+      }
+    },
+    "owner": {
+      "tabs": {
+        "overview": "Ringkasan",
+        "rooms": "Kamar",
+        "people": "Orang",
+        "pending": "{count} permintaan gabung menunggu"
+      },
+      "stats": {
+        "occupancy": "Kamar terisi",
+        "vacant": "{count} kosong",
+        "collected": "Terkumpul bulan ini",
+        "expected": "dari {amount} yang diharapkan",
+        "overdue": "Kamar terlambat bayar",
+        "overdueHint": "Perlu ditindaklanjuti"
+      },
+      "caretakers": "Penjaga kos",
+      "residents": "Penghuni",
+      "noCaretakers": "Belum ada penjaga kos. Undang lewat panel di atas.",
+      "noResidents": "Belum ada penghuni."
+    },
+    "rooms": {
+      "room": "Kamar",
+      "resident": "Penghuni",
+      "rent": "Sewa bulanan",
+      "status": "Status",
+      "noResident": "Belum ada penghuni"
+    },
+    "people": {
+      "room": "Kamar {name}",
+      "flagged": "Data kamar ditandai",
+      "call": "Telepon {name}"
+    },
+    "checklist": {
+      "title": "Mulai dari sini",
+      "progress": "{done} dari {total} selesai",
+      "allDone": "Semua selesai. Kerja bagus!",
+      "progressLabel": "Progres persiapan",
+      "hide": "Sembunyikan",
+      "invite": "Undang",
+      "items": {
+        "setupKos": "Siapkan kos kamu",
+        "inviteCaretaker": "Undang penjaga kos kamu",
+        "inviteResident": "Undang penghuni pertama kamu"
+      },
+      "doneMark": "(selesai)",
+      "todoMark": "(belum selesai)"
+    },
+    "requests": {
+      "title": "Menunggu bergabung",
+      "subtitle": "Mereka minta bergabung pakai kode kos kamu. Cuma kamu yang bisa menyetujui.",
+      "approve": "Setujui",
+      "decline": "Tolak",
+      "chooseRoom": "Mereka mau menempati kamar mana?",
+      "selectRoom": "Pilih kamar",
+      "confirm": "Konfirmasi",
+      "noVacantRooms": "Kamu nggak punya kamar kosong buat ditempati.",
+      "roomTaken": "Kamar itu baru saja terisi. Pilih kamar lain."
+    },
+    "invites": {
+      "title": "Undang orang",
+      "subtitle": "Kirim link undangan pribadi, atau bagikan kode kos dan setujui sendiri permintaannya.",
+      "codeLabel": "Kode kos kamu",
+      "codeHelp": "Orang memasukkan kode ini buat minta bergabung. Nggak ada yang terjadi sebelum kamu menyetujui.",
+      "copy": "Salin",
+      "copied": "Tersalin",
+      "newInvite": "Link undangan baru",
+      "regenerate": "Kode baru",
+      "regenerateWarning": "Kode lama nggak akan berfungsi lagi.",
+      "regenerateConfirm": "Ya, ganti",
+      "cancel": "Batal",
+      "listTitle": "Link undangan",
+      "empty": "Belum ada link undangan.",
+      "room": "Kamar {name}",
+      "status": {
+        "active": "Aktif",
+        "used": "Terpakai",
+        "expired": "Kedaluwarsa",
+        "revoked": "Dibatalkan"
+      },
+      "expiresOn": "Berlaku sampai {date}",
+      "createdOn": "Dibuat {date}",
+      "copyLink": "Salin link",
+      "revoke": "Batalkan undangan",
+      "revokeConfirm": "Ya, batalkan"
+    },
+    "invite": {
+      "title": "Undang seseorang",
+      "close": "Tutup",
+      "roleLabel": "Mereka akan bergabung sebagai",
+      "roleHelp": {
+        "caretaker": "Bisa melihat semua kamar dan penghuni, dan membantu mencatat keseharian.",
+        "tenant": "Melihat kamar, sewa, dan bukti pembayaran miliknya sendiri."
+      },
+      "roomLabel": "Kamar untuk penghuni ini",
+      "selectRoom": "Pilih kamar",
+      "noVacantRooms": "Kamu nggak punya kamar kosong buat ditempati.",
+      "create": "Buat link undangan",
+      "creating": "Lagi membuat...",
+      "errors": {
+        "roomRequired": "Pilih kamar buat penghuni ini.",
+        "roomUnavailable": "Kamar itu nggak tersedia. Pilih kamar lain."
+      },
+      "createdBody": "Bagikan link ini ke mereka. Cuma bisa dipakai sekali dan berlaku {days} hari.",
+      "linkLabel": "Link undangan",
+      "copy": "Salin",
+      "copied": "Tersalin",
+      "shareWhatsApp": "Bagikan lewat WhatsApp",
+      "shareMessage": "Kamu diundang bergabung ke {kos} di Kosly sebagai {role}. Buka link ini: {url}"
+    },
+    "caretaker": {
+      "occupancy": "Kamar terisi",
+      "vacant": "{count} kosong",
+      "overdue": "Kamar terlambat bayar",
+      "overdueHint": "Perlu ditindaklanjuti",
+      "roomsTitle": "Kamar",
+      "residents": "Penghuni",
+      "noResidents": "Belum ada penghuni."
+    },
+    "resident": {
+      "yourRoom": "Kamar kamu",
+      "rent": "{amount} per bulan",
+      "dueDay": "Jatuh tempo tanggal {day} tiap bulan",
+      "statusNote": {
+        "paid": "Sudah dibayar bulan ini. Terima kasih!",
+        "due": "Sewa bulan ini belum dibayar.",
+        "overdue": "Sewa terlambat dibayar. Mohon segera dibayar ya.",
+        "vacant": "Kamar ini belum ditempati."
+      },
+      "noRoom": "Kamu belum punya kamar.",
+      "paymentsTitle": "Riwayat pembayaran",
+      "noPayments": "Belum ada pembayaran yang tercatat.",
+      "paymentMeta": "{date} · dicatat oleh {by}",
+      "caretakers": "Penjaga kos kamu",
+      "noCaretakers": "Belum ada penjaga kos yang bergabung."
     }
   }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { parseInviteToken } from "@/lib/params";
 import { buildPageMetadata } from "@/lib/seo";
 import { RegisterView } from "./_components/RegisterView";
 import { ROLES, type Role } from "./_components/register.types";
@@ -33,5 +34,5 @@ export default async function RegisterPage({
   const resolvedSearchParams = await searchParams;
   const initialRole = resolveRole(resolvedSearchParams.role);
 
-  return <RegisterView initialRole={initialRole} />;
+  return <RegisterView initialRole={initialRole} invite={parseInviteToken(resolvedSearchParams.invite)} />;
 }
